@@ -5,6 +5,17 @@ provider:
   name: aws
   runtime: nodejs18.x
   region: sa-east-1
+  iam:
+      role:
+          statements:
+            - Effect: Allow
+              Action: 
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+                - dynamodb:GetItem
+                - dynamodb:scan
+              Resource: 
+                - arn:aws:dynamodb:sa-east-1:195085180151:table/ItemTableNew
 
 functions:
   api:
