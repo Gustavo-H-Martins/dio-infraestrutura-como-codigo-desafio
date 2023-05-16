@@ -27,7 +27,7 @@ const insertObject = async ( event) => {
 
     return {
         statusCode: 200,
-        body: JSON.stringify(newObject)
+        body: JSON.stringify(newObject),
     };
 }
 
