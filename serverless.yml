@@ -24,6 +24,32 @@ functions:
       - httpApi:
           path: /
           method: get
+  insertItem:
+    handler: src/insertObject.handler
+    events:
+      - httpApi:
+          path: /object
+          method: post
+  fetchItems:
+    handler: src/fetchObjects.handler
+    events:
+      - httpApi:
+          path: /objects
+          method: get
+  fetchItem:
+    handler: src/fetchObject.handler
+    events:
+      - httpApi:
+          path: /objects/{id}
+          method: get
+
+  updateObject:
+    handler: src/updateObject.handler
+    events:
+      - httpApi:
+          path: /objects/{id}
+          method: put
+
 resources: 
   Resources:
     ItemTableNew:
